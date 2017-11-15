@@ -1,11 +1,11 @@
 liste couleurs : https://matplotlib.org/examples/color/named_colors.html
 
-Accessibilité des gares et stations : https://data.ratp.fr/explore/embed/dataset/accessibilite-des-gares-et-stations-metro-et-rer-ratp/table/?&static=false&datasetcard=false
+Accessibilité des gares et stations (lien page de téléchargement des fichiers): https://data.ratp.fr/explore/dataset/accessibilite-des-gares-et-stations-metro-et-rer-ratp/export/
 
-Trafic 2016: https://data.ratp.fr/explore/embed/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2016/table/?sort=-rang&static=false&datasetcard=false
+Trafic 2016: https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2016/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true
 
-Trafic 2015: https://data.ratp.fr/explore/embed/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2015/table/?sort=-rang&static=false&datasetcard=false
+Trafic 2015: https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2015/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true
 
-Trafic 2014: https://data.ratp.fr/explore/embed/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2014/table/?&static=false&datasetcard=false
+Trafic 2014: https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2014/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true
 
-Trafic 2013: https://data.ratp.fr/explore/embed/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre/table/?&static=false&datasetcard=false
+Trafic 2013: https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true
