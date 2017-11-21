@@ -10,7 +10,7 @@ import histogramme as histo
 import telechargement as telg
 
 def main():
-    fichier = telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2016/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "D:/Bureau/E3FI/Python/2016.csv")
+    fichier = telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2016/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "./2016.csv")
     fichier.chargement()
     w = np.random.randn(10000)
     x = np.random.randn(10000)

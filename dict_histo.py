@@ -39,7 +39,7 @@ def build_hist_dict(csvfile):
     #         ajouter au dictionnaire une paire clÃ©-valeur
     #         la clÃ© est construite avec une information contenue dans la ligne
     #         la valeur est le namedtuple Station dont les champs sont contenus dans la ligne
-    with open('trafic-annuel-entrant-par-station-du-reseau-ferre-2016.csv') as csvfile:
+    with open('./2016.csv') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
         for ligne in reader:
             d[ligne['Station']] = Station(ligne['Trafic'], ligne['Rang'], ligne['Ville'])
