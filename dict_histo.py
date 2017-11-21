@@ -18,15 +18,15 @@ def build_hist_dict(csvfile):
     Returns:
         dictionnaire de namedtuple des informations relatives aux stations de transports en commun
         
-    >>> d = build_stations_dict('stations-meteo.csv')
-    >>> print(d['NICE'])
-    Station(ID='07690', Latitude=43.648833, Longitude=7.209, Altitude=2)
-    >>> print(d['BELLE ILE-LE TALUT'])
-    Station(ID='07207', Latitude=47.294333, Longitude=-3.218333, Altitude=34)
-    >>> print(d['CAYENNE-MATOURY'])
-    Station(ID='81405', Latitude=4.822333, Longitude=-52.365333, Altitude=4)
-    >>> print(d['NICE'].Latitude)
-    43.648833
+    >>> d = build_hist_dict('trafic-annuel-entrant-par-station-du-reseau-ferre-2016.csv')
+    >>> print(d['GARE DE LYON'])
+    Station(Trafic='36352115', Rang='3', Ville='Paris')
+    >>> print(d['NOISY-CHAMPS'])
+    Station(Trafic='4868790', Rang='20', Ville='Champs-sur-Marne')
+    >>> print(d['GARE DE LYON'].Trafic)
+    36352115
+    >>> print(d['NOISY-CHAMPS'].Ville)
+    Champs-sur-Marne
     """
     
     # Construire le namedtuple
@@ -39,7 +39,7 @@ def build_hist_dict(csvfile):
     #         ajouter au dictionnaire une paire clÃ©-valeur
     #         la clÃ© est construite avec une information contenue dans la ligne
     #         la valeur est le namedtuple Station dont les champs sont contenus dans la ligne
-    with open('stations-meteo.csv') as csvfile:
+    with open('trafic-annuel-entrant-par-station-du-reseau-ferre-2016.csv') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
         for ligne in reader:
             d[ligne['Station']] = Station(ligne['Trafic'], ligne['Rang'], ligne['Ville'])
