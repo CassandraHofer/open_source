@@ -8,7 +8,7 @@ Created on Tue Nov 21 21:58:03 2017
 import csv, json
 from collections import namedtuple
 
-def build_hist_dict(csvfile):
+def build_dict(csvfile):
     """
     retourne un dictionnaire des stations de transports en commun du fichier passé en argument
 
@@ -50,7 +50,7 @@ def build_hist_dict(csvfile):
 
 if __name__ == '__main__':
     # votre code de test ici...
-    d = build_hist_dict('./2016.csv')
+    d = build_dict('./2016.csv')
     print(d['GARE DE LYON'])
     print(d['NOISY-CHAMPS'])
     print(d['GARE DE LYON'].Trafic)
