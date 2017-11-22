@@ -17,6 +17,9 @@ def main():
     telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2014/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "./2014.csv")
     telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "./2013.csv")
     trafic_2016 = ext.Extract('./2016.csv').get_trafic()
+    trafic_2015 = ext.Extract('./2015.csv').get_trafic()
+    trafic_2014 = ext.Extract('./2014.csv').get_trafic()
+    trafic_2013 = ext.Extract('./2013.csv').get_trafic()
     
     
 #    donnees_2015 = ext('./2015.csv').build_dict()
@@ -32,48 +35,12 @@ def main():
 #    print(donnees_2016['NOISY-CHAMPS'].Rang)
 #    print(donnees_2016['NOISY-CHAMPS'].Ville)
 #    print('Done')
-    for e in trafic_2016:
-        print(e)
-        
-    count0_10 = 0
-    count10_20 = 0
-    count20_30 = 0
-    count30_40 = 0
-    count40_50 = 0
-    count50_60 = 0
-    for trafic in trafic_2016:
-        if trafic < 10000000:
-            count0_10 += 1
-        elif trafic < 20000000:
-            count10_20 += 1
-        elif trafic < 30000000:
-            count20_30 += 1
-        elif trafic < 40000000:
-            count30_40 += 1
-        elif trafic < 50000000:
-            count40_50 += 1
-        elif trafic < 60000000:
-            count50_60 += 1
-    print("\n")        
-    print(count0_10)
-    print(count10_20)
-    print(count20_30)
-    print(count30_40)
-    print(count40_50)
-    print(count50_60)
-        
-        
-    
-    w = np.random.randn(10000)
-    x = np.random.randn(10000)
-    y = np.random.randn(10000)
-    z = np.random.randn(10000)
-    
-    b = list(range(-4,5,1))
 
-    histogramme = histo.Histogramme_Bar(w, x, y, z, b, "bins", "count", "10.000 random numbers")
-    histogramme.afficherHistogramme()
-    
+    b = list(range(0, 60000000, 5000000))
+
+    histo_bar = histo.Histogramme_Bar(trafic_2016, trafic_2015, trafic_2014, trafic_2013, b, "Trafic", "Nb Stations", "Trafic gares RATP")
+    histo_bar.afficherHistogramme()
+    histo_bar.afficherBar()
 
 if __name__ == "__main__":
     main()

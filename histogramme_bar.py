@@ -20,51 +20,52 @@ class Histogramme_Bar:
         self.tittle = tittle
         
     def afficherHistogramme(self):
-        data = np.vstack([self.w, self.x, self.y, self.z]).T
                         
-        n, bins, patches = plt.hist(data, bins=self.b, label= ['2013','2014','2015','2016'], color= ['crimson', 'burlywood', 'darkmagenta', 'olive'])
-        
+        n, bins, patches = plt.hist(self.w, bins=self.b,alpha = 0.9 ,color= ['crimson'] , rwidth=0.9)
+
         plt.xlabel(self.xlabel)
         plt.ylabel(self.ylabel)
         plt.legend(loc='upper right')
-        plt.title(self.tittle)
+        plt.title(self.tittle + " en 2016" )
         plt.show()
         
         
     def afficherBar(self):
-        
-        self.x = (20, 35, 30, 35)
-
-        self.y = (25, 32, 34, 20)
-
-        self.z = (25, 32, 34, 20)
 
         fig, ax = plt.subplots()
 
         index = np.arange(4)
-        bar_width = 0.25
+        
+        bar_width = 0.20
 
         opacity = 0.4
 
-        rects1 = plt.bar(index, self.x, bar_width,
+        trafic2016 = plt.bar(index, self.x, bar_width,
                          alpha=opacity,
                          color='b',
-                         label='Men')
+                         label='2016')
 
-        rects2 = plt.bar(index + bar_width, self.y, bar_width,
+        trafic2015 = plt.bar(index + bar_width, self.y, bar_width,
                          alpha=opacity,
                          color='r',
-                         label='Women')
+                         label='2015')
 
-        rects2 = plt.bar(index + bar_width*2, self.z, bar_width,
+        trafic2014 = plt.bar(index + bar_width*2, self.z, bar_width,
                          alpha=opacity,
                          color='y',
-                         label='Women')
+                         label='2014')
+        
+        trafic2013 = plt.bar(index + bar_width*3, self.z, bar_width,
+                         alpha=opacity,
+                         color='y',
+                         label='2013')
+        
+        
         
         plt.xlabel('Group')
         plt.ylabel('Scores')
         plt.title('Scores by group and gender')
-        plt.xticks(index + bar_width / 2, ('A', 'B', 'C', 'D'))
+        plt.xticks(index + bar_width / 4, ('A', 'B', 'C', 'D'))
         plt.legend()
 
         plt.tight_layout()
