@@ -8,19 +8,19 @@ import numpy as np # import package
 import matplotlib.pyplot as plt
 
 class Histogramme:
-    def __init__(self, w, x, y, z, b, xlabel, ylabel, tittle):
+    def __init__(self, w, x, y, z, labels, xlabel, ylabel, tittle):
         #Faire de x, y, etc des dico contenant label et la liste de valeurs
         self.w = w
         self.x = x
         self.y = y
         self.z = z
-        self.b = b
+        self.labels = labels
         self.xlabel = xlabel
         self.ylabel = ylabel
         self.tittle = tittle
         
     def afficherHistogramme(self):
-        data = np.vstack([self.w, self.x, self.y, self.z]).T
+##        data = np.vstack([self.w, self.x, self.y, self.z]).T
                         
         #b = ["Gare de Lyon", "Montparnasse", "La Rochelle"];
 ##        n, bins, patches = plt.hist(data, bins=self.b, label= ['2013','2014','2015','2016'], color= ['crimson', 'burlywood', 'darkmagenta', 'olive'])
@@ -36,10 +36,12 @@ class Histogramme:
 
         self.y = (25, 32, 34, 20)
 
+        self.z = (25, 32, 34, 20)
+
         fig, ax = plt.subplots()
 
         index = np.arange(4)
-        bar_width = 0.35
+        bar_width = 0.25
 
         opacity = 0.4
 
@@ -51,6 +53,11 @@ class Histogramme:
         rects2 = plt.bar(index + bar_width, self.y, bar_width,
                          alpha=opacity,
                          color='r',
+                         label='Women')
+
+        rects2 = plt.bar(index + bar_width*2, self.z, bar_width,
+                         alpha=opacity,
+                         color='y',
                          label='Women')
 
         plt.xlabel('Group')

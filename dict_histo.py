@@ -50,7 +50,7 @@ def build_hist_dict(csvfile):
 
 if __name__ == '__main__':
     # votre code de test ici...
-    d = build_hist_dict('trafic-annuel-entrant-par-station-du-reseau-ferre-2016.csv')
+    d = build_hist_dict('./2016.csv')
     print(d['GARE DE LYON'])
     print(d['NOISY-CHAMPS'])
     print(d['GARE DE LYON'].Trafic)

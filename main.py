@@ -17,6 +17,8 @@ def main():
     y = np.random.randn(10000)
     z = np.random.randn(10000)
 
+    #d = build_hist_dict('./2016.csv')
+    
     b = list(range(-4,5,1))
 
     histogramme = histo.Histogramme(w, x, y, z, b, "bins", "count", "10.000 random numbers")
