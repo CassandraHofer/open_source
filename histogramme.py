@@ -15,7 +15,7 @@ class Histogramme:
         self.xlabel = xlabel
         self.ylabel = ylabel
         self.tittle = tittle
-        self.afficherHistogramme
+        self.afficherHistogramme()
         
     def afficherHistogramme(self):
         n, bins, patches = plt.hist(self.trafic, bins=self.b,alpha = 0.9 ,color= ['crimson'] , rwidth=0.9)

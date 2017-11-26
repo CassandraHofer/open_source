@@ -43,8 +43,8 @@ class Extract:
         # pour chaque ligne on ajoute au dictionnaire une paire clé-valeur
         # la clé est construite avec une information contenue dans la ligne
         # la valeur est le namedtuple Station dont les champs sont contenus dans la ligne
-        with open('./2016.csv') as self.csvfile:
-            reader = csv.DictReader(self.csvfile, delimiter=';')
+        with open(self.csvfile) as f:
+            reader = csv.DictReader(f, delimiter=';')
             for ligne in reader:
                 d[ligne['Station']] = Station(ligne['Trafic'], ligne['Rang'], ligne['Ville'])       
         return d

@@ -21,16 +21,16 @@ class Bar:
         
     def afficherBar(self):
 
-        n_groups = 10
-        means_frank = (90, 55, 40, 65, 5,85,2,1,3,50)
-        means_guido = (85, 62, 54, 20, 85,2,1,3,50, 84)
-        frank = (90, 55, 40, 65, 5,85,2,1,3,50)
-        guido = (85, 62, 54, 20, 85,2,1,3,50, 84)
+        n_groups = 5
+        means_frank = self.w
+        means_guido = self.x
+        frank = self.y
+        guido = self.z
          
         # create plot
         fig, ax = plt.subplots()
         index = np.arange(n_groups)
-        bar_width = 0.20
+        bar_width = 0.10
         opacity = 0.8
          
         rects1 = plt.bar(index, means_frank, bar_width,
@@ -56,7 +56,7 @@ class Bar:
         plt.xlabel('Person')
         plt.ylabel('Scores')
         plt.title('Scores by person')
-        plt.xticks(index + bar_width/4, ('A', 'B', 'C', 'D'))
+        plt.xticks(index + bar_width*2, ('A', 'B', 'C', 'D'))
         plt.legend()
          
         plt.tight_layout()
