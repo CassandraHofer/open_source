@@ -22,4 +22,5 @@ class Histogramme:
         plt.xlabel(self.xlabel)
         plt.ylabel(self.ylabel)
         plt.title(self.tittle)
-        plt.show()
+        #plt.show()
+        fig.savefig()

@@ -4,8 +4,6 @@ Created on Wed Nov 15 09:06:13 2017
 
 @author: hoferc
 """
-import numpy as np
-
 import histogramme as histo
 import telechargement as telg
 import extract as ext
@@ -26,6 +24,7 @@ def main():
     
     stations_rer = ["GARE DU NORD-RER","GARE DE LYON-RER","LA DEFENSE-RER","CHATELET-LES HALLES-RER","NANTERRE-PREFECTURE"]
     stations_metro = ["GARE DU NORD","SAINT-LAZARE","GARE DE LYON","MONTPARNASSE-BIENVENUE","GARE DE L'EST"]
+    stations_top5 = ["GARE DU NORD", "GARE DU NORD-RER", "SAINT-LAZARE", "GARE DE LYON-RER", "GARE DE LYON"]
     trafic_rer_2016 = []
     trafic_rer_2015 = []
     trafic_rer_2014 = []
@@ -34,31 +33,38 @@ def main():
     trafic_metro_2015 = []
     trafic_metro_2014 = []
     trafic_metro_2013 = []
+    trafic_top5_2016 = []
+    trafic_top5_2015 = []
+    trafic_top5_2014 = []
+    trafic_top5_2013 = []
     
     for rer in stations_rer:
-        trafic_rer_2016.append(dict_2016[rer].Trafic)
-        trafic_rer_2015.append(dict_2015[rer].Trafic)
-        trafic_rer_2014.append(dict_2014[rer].Trafic)
-        trafic_rer_2013.append(dict_2013[rer].Trafic)
+        trafic_rer_2016.append((int)(dict_2016[rer].Trafic))
+        trafic_rer_2015.append((int)(dict_2015[rer].Trafic))
+        trafic_rer_2014.append((int)(dict_2014[rer].Trafic))
+        trafic_rer_2013.append((int)(dict_2013[rer].Trafic))
         
     for metro in stations_metro:
-        trafic_metro_2016.append(dict_2016[metro].Trafic)
-        trafic_metro_2015.append(dict_2015[metro].Trafic)
-        trafic_metro_2014.append(dict_2014[metro].Trafic)
-        trafic_metro_2013.append(dict_2013[metro].Trafic)
+        trafic_metro_2016.append((int)(dict_2016[metro].Trafic))
+        trafic_metro_2015.append((int)(dict_2015[metro].Trafic))
+        trafic_metro_2014.append((int)(dict_2014[metro].Trafic))
+        trafic_metro_2013.append((int)(dict_2013[metro].Trafic))
+        
+    for station in stations_top5:
+        trafic_top5_2016.append((int)(dict_2016[station].Trafic))
+        trafic_top5_2015.append((int)(dict_2015[station].Trafic))
+        trafic_top5_2014.append((int)(dict_2014[station].Trafic))
+        trafic_top5_2013.append((int)(dict_2013[station].Trafic))
     
     b = list(range(0, 60000000, 5000000))
 
-    for rer in trafic_rer_2016 :
-        print(rer)
-    print("\n")
-    for rer in trafic_rer_2013 :
-        print(rer)
-
     ##On effectue le fiagramme uniquement pour l'année 2016 car les chiffres ne changent pas entre 2013 et 2016
-    #histo.Histogramme(trafic_2016, b, "Trafic", "Nb Stations", "Trafic gares RATP en 2016")
+    histo.Histogramme(trafic_2016, b, "Trafic", "Nb Stations", "Trafic gares RATP en 2016")
     bar.Bar(trafic_rer_2016, trafic_rer_2015, trafic_rer_2014, trafic_rer_2013, stations_rer, 'Stations', 'Trafic', 'Trafic Stations RER RATP')
-    #bar.Bar(trafic_2016, trafic_2015, trafic_2014, trafic_2013, b, "Trafic", "Nb Stations", "Trafic gares RATP")
+    bar.Bar(trafic_metro_2016, trafic_metro_2015, trafic_metro_2014, trafic_metro_2013, stations_metro, 'Stations', 'Trafic', 'Trafic Stations Metro RATP')
+    bar.Bar(trafic_top5_2016, trafic_top5_2015, trafic_top5_2014, trafic_top5_2013, stations_top5, 'Stations', 'Trafic', 'Trafic 5 Stations les plus fréquentées RATP')
+
+
 
 if __name__ == "__main__":
     main()

@@ -8,7 +8,7 @@ import numpy as np # import package
 import matplotlib.pyplot as plt
 
 class Bar:
-    def __init__(self, w, x, y, z, labels, xlabel, ylabel, tittle):
+    def __init__(self, w, x, y, z, labels, xlabel, ylabel, title):
         self.w = w
         self.x = x  
         self.y = y
@@ -16,98 +16,46 @@ class Bar:
         self.labels = labels
         self.xlabel = xlabel
         self.ylabel = ylabel
-        self.tittle = tittle    
+        self.title = title    
         self.afficherBar()
         
     def afficherBar(self):
-
-        n_groups = 5
-        means_frank = self.w
-        means_guido = self.x
-        frank = self.y
-        guido = self.z
-         
+        
+        nb_stations = len(self.labels)
         # create plot
         fig, ax = plt.subplots()
-        index = np.arange(n_groups)
-        bar_width = 0.10
+        index = np.arange(nb_stations)
+        bar_width = 0.15
         opacity = 0.8
-         
-        rects1 = plt.bar(index, means_frank, bar_width,
+        
+        rects1 = plt.bar(index, self.w, bar_width,
                          alpha=opacity,
                          color='b',
-                         label='Frank')
+                         label='2016')
          
-        rects2 = plt.bar(index + bar_width, means_guido, bar_width,
+        rects2 = plt.bar(index + bar_width, self.x, bar_width,
                          alpha=opacity,
                          color='g',
-                         label='Guido')
+                         label='2015')
         
-        rects3 = plt.bar(index + bar_width *2 , frank, bar_width,
+        rects3 = plt.bar(index + bar_width *2 , self.y, bar_width,
                          alpha=opacity,
                          color='y',
-                         label='Robert')
+                         label='2014')
          
-        rects4 = plt.bar(index + bar_width *3, guido, bar_width,
+        rects4 = plt.bar(index + bar_width *3, self.z, bar_width,
                          alpha=opacity,
                          color='r',
-                         label='George')
+                         label='2013')
          
-        plt.xlabel('Person')
-        plt.ylabel('Scores')
-        plt.title('Scores by person')
-        plt.xticks(index + bar_width*2, ('A', 'B', 'C', 'D'))
+        plt.xlabel(self.xlabel)
+        plt.ylabel(self.ylabel)
+        plt.title(self.title)
+        plt.xticks(0.30, self.labels,fontsize = 8)
         plt.legend()
          
         plt.tight_layout()
-        plt.show()
+        #plt.show()
+        fig.savefig(self.title+'.png', dpi = 150)
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-#        fig, ax = plt.subplots()
-#
-#        index = np.arange(4)
-#        
-#        bar_width = 0.20
-#
-#        opacity = 0.4
-#
-#        trafic2016 = plt.bar(range(len(self.x)), self.x, bar_width,
-#                         alpha=opacity,
-#                         color='b',
-#                         label='2016')
-#
-#        trafic2015 = plt.bar(range(len(self.y)) + bar_width, self.y, bar_width,
-#                         alpha=opacity,
-#                         color='r',
-#                         label='2015')
-#
-#        trafic2014 = plt.bar(range(len(self.z)) + bar_width*2, self.z, bar_width,
-#                         alpha=opacity,
-#                         color='y',
-#                         label='2014')
-#        
-#        trafic2013 = plt.bar(range(len(self.z)) + bar_width*3, self.z, bar_width,
-#                         alpha=opacity,
-#                         color='y',
-#                         label='2013')
-#        
-#        
-#        
-#        plt.xlabel('Group')
-#        plt.ylabel('Scores')
-#        plt.title('Scores by group and gender')
-#        plt.xticks(index + bar_width / 4, ('A', 'B', 'C', 'D'))
-#        plt.legend()
-#
-#        plt.tight_layout()
-#        plt.show()
