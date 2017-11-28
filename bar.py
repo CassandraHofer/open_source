@@ -51,7 +51,7 @@ class Bar:
         plt.xlabel(self.xlabel)
         plt.ylabel(self.ylabel)
         plt.title(self.title)
-        plt.xticks(0.30, self.labels,fontsize = 8)
+        plt.xticks(index + 3*bar_width/2 , self.labels,fontsize = 8)
         plt.legend()
          
         plt.tight_layout()

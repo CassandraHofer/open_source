@@ -15,7 +15,7 @@ class Extract:
         self.csvfile = csvfile
         
         
-    def build_dict(self):
+    def build_dict_trafic(self):
         """
         retourne un dictionnaire des stations de transports en commun du fichier passé en argument
     
@@ -53,8 +53,11 @@ class Extract:
     def get_trafic(self):
         
         lst_trafic = []
-        stations = self.build_dict()
+        stations = self.build_dict_trafic()
         for station in stations.keys():
             lst_trafic.append((int)(stations[station].Trafic))
                 
         return lst_trafic
+
+#    def get_accesibilite(self):
+        

@@ -16,10 +16,10 @@ def main():
     telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2014/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "./2014.csv")
     telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "./2013.csv")
     donnees_2016 = ext.Extract('./2016.csv')
-    dict_2016 = donnees_2016.build_dict()
-    dict_2015 = ext.Extract('./2015.csv').build_dict()
-    dict_2014 = ext.Extract('./2014.csv').build_dict()
-    dict_2013 = ext.Extract('./2013.csv').build_dict()
+    dict_2016 = donnees_2016.build_dict_trafic()
+    dict_2015 = ext.Extract('./2015.csv').build_dict_trafic()
+    dict_2014 = ext.Extract('./2014.csv').build_dict_trafic()
+    dict_2013 = ext.Extract('./2013.csv').build_dict_trafic()
     trafic_2016 = donnees_2016.get_trafic()
     
     stations_rer = ["GARE DU NORD-RER","GARE DE LYON-RER","LA DEFENSE-RER","CHATELET-LES HALLES-RER","NANTERRE-PREFECTURE"]
