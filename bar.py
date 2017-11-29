@@ -30,28 +30,28 @@ class Bar:
         
         rects1 = plt.bar(index, self.w, bar_width,
                          alpha=opacity,
-                         color='b',
+                         color='darkorange',
                          label='2016')
          
         rects2 = plt.bar(index + bar_width, self.x, bar_width,
                          alpha=opacity,
-                         color='g',
+                         color='crimson',
                          label='2015')
         
         rects3 = plt.bar(index + bar_width *2 , self.y, bar_width,
                          alpha=opacity,
-                         color='y',
+                         color='sandybrown',
                          label='2014')
          
         rects4 = plt.bar(index + bar_width *3, self.z, bar_width,
                          alpha=opacity,
-                         color='r',
+                         color='darkred',
                          label='2013')
          
         plt.xlabel(self.xlabel)
         plt.ylabel(self.ylabel)
         plt.title(self.title)
-        plt.xticks(index + 3*bar_width/2 , self.labels,fontsize = 8)
+        plt.xticks(index + 3*bar_width/2 , self.labels,fontsize = 8, rotation=12)
         plt.legend()
          
         plt.tight_layout()
