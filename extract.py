@@ -59,5 +59,23 @@ class Extract:
                 
         return lst_trafic
 
-#    def get_accesibilite(self):
-        
+    def build_dict_accessibilite(self):
+        Station = namedtuple('nomptar', ['Accessibilite', 'coord'])
+        # Crée un dictionnaire vide pour stocker les données
+        d = dict()
+        # pour chaque ligne on ajoute au dictionnaire une paire clé-valeur
+        # la clé est construite avec une information contenue dans la ligne
+        # la valeur est le namedtuple Station dont les champs sont contenus dans la ligne
+        with open(self.csvfile) as f:
+            reader = csv.DictReader(f, delimiter=';')
+            for ligne in reader:
+                d[ligne['nomptar']] = Station(ligne['Accessibilite Quai Train'], ligne['coord'])       
+        return d
+    
+    def get_accessibilite(self):
+        lst_accessibilite = []
+        stations = self.build_dict_accessibilite()
+        for station in stations.keys():
+            lst_accessibilite.append((int)(stations[station].Accessibilite))
+                
+        return lst_accessibilite
