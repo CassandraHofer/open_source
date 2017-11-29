@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# encoding: utf8
 """
 Created on Tue Nov 21 21:58:03 2017
 
@@ -60,7 +60,7 @@ class Extract:
         return lst_trafic
 
     def build_dict_accessibilite(self):
-        Station = namedtuple('nomptar', ['Accessibilite', 'coord'])
+        Station = namedtuple('nomptar', ['Accessibilite', 'lat', 'long'])
         # Crée un dictionnaire vide pour stocker les données
         d = dict()
         # pour chaque ligne on ajoute au dictionnaire une paire clé-valeur
@@ -69,7 +69,8 @@ class Extract:
         with open(self.csvfile) as f:
             reader = csv.DictReader(f, delimiter=';')
             for ligne in reader:
-                d[ligne['nomptar']] = Station(ligne['Accessibilite Quai Train'], ligne['coord'])       
+                lat, long = ligne['coord'].split(', ')
+                d[ligne['nomptar']] = Station(ligne['Accessibilite Quai Train'], (float)(lat), (float)(long))                
         return d
     
     def get_accessibilite(self):

@@ -15,18 +15,24 @@ class Pie_Chart:
 
 
     def afficherPieChart(self):
-        labels = 'Python', 'C++', 'Ruby', 'Java'
-        sizes = [215, 130, 245, 210]
-        colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
-        explode = (0.1, 0, 0, 0)  # explode 1st slice
+        count_access = 0;
+        count_non_access = 0;
+        for e in self.lst:
+            if e>=1 :
+                count_access += 1
+            else :
+                count_non_access += 1
+        sizes = [count_access, count_non_access]
+        colors = ['lightcoral', 'lightskyblue']
+        explode = (0.1, 0)  # explode 1st slice
          
-        # Plot
+        # Creation d'une nouvelle figure
         plt.figure()
         plt.title(self.title)
-        plt.pie(sizes, explode=explode, labels=labels, colors=colors,
+        plt.pie(sizes, explode=explode, labels=self.labels, colors=colors,
                 autopct='%1.1f%%', shadow=True, startangle=140)
          
         plt.axis('equal')
         plt.tight_layout()
         #plt.show()
-        plt.savefig(self.title + ".png")
+        plt.savefig(self.title + ".png", dpi = 150)
