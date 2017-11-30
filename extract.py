@@ -7,6 +7,7 @@ Created on Tue Nov 21 21:58:03 2017
 
 import csv
 from collections import namedtuple
+from unidecode import unidecode
 
 
 class Extract:
@@ -69,6 +70,7 @@ class Extract:
         with open(self.csvfile) as f:
             reader = csv.DictReader(f, delimiter=';')
             for ligne in reader:
+                ligne['nomptar'] = unidecode(ligne['nomptar'])
                 lat, long = ligne['coord'].split(', ')
                 d[ligne['nomptar']] = Station(ligne['Accessibilite Quai Train'], (float)(lat), (float)(long))                
         return d

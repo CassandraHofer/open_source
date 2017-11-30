@@ -4,8 +4,10 @@ Created on Wed Nov 15 09:06:13 2017
 
 @author: hoferc
 """
+
 import pip
 pip.main(['install', 'folium'])
+pip.main(['install', 'unidecode'])
 import histogramme as histo
 import telechargement as telg
 import extract as ext
@@ -38,7 +40,7 @@ def main():
     stations_rer = ["GARE DU NORD-RER","GARE DE LYON-RER","LA DEFENSE-RER","CHATELET-LES HALLES-RER","NANTERRE-PREFECTURE"]
     stations_metro = ["GARE DU NORD","SAINT-LAZARE","GARE DE LYON","MONTPARNASSE-BIENVENUE","GARE DE L'EST"]
     stations_top5 = ["GARE DU NORD", "GARE DU NORD-RER", "SAINT-LAZARE", "GARE DE LYON-RER", "GARE DE LYON"]
-    stations_map = ['Porte de Vincennes', 'Gare de Lyon', 'Tuileries', 'Grands Boulevards', 'Billancourt', 'Aubervilliers Pantin (4 Chemins)', 'Porte d\'Italie', 'Pont Neuf', 'Montparnasse-Bienvenue', 'Les Halles', 'Bercy']
+    stations_map = ['Porte de Vincennes', 'Gare de Lyon', 'Tuileries', 'Grands Boulevards', 'Billancourt', 'Aubervilliers Pantin (4 Chemins)', 'Porte d\'Italie', 'Pont Neuf', 'Montparnasse-Bienvenue', 'Les Halles', 'Bercy', 'Porte de Clignancourt', 'Riquet', 'Nogent-sur-Marne', 'Gare du Nord', 'Nanterre-Préfecture']
     trafic_rer_2016 = []
     trafic_rer_2015 = []
     trafic_rer_2014 = []
