@@ -24,4 +24,4 @@ class Histogramme:
         plt.ylabel(self.ylabel)
         plt.title(self.title)
         #plt.show()
-        plt.savefig(self.title + ".png")
+        plt.savefig("./img/"+self.title + ".png", dpi=150)
