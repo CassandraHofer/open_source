@@ -15,6 +15,7 @@ class Map_Idf:
         self.afficher_map()
 
     def afficher_map(self):
+        
         map_idf = folium.Map(location=[48.857426, 2.344295],
                            zoom_start=12)
         for station in self.liste_stations:

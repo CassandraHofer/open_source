@@ -4,19 +4,21 @@ Created on Wed Nov 15 09:06:13 2017
 
 @author: hoferc
 """
+import pip
+pip.main(['install', 'folium'])
 import histogramme as histo
 import telechargement as telg
 import extract as ext
 import bar
 import pie_chart as pc
-import pip
+
 import map_idf
 import webbrowser
 import os
 
 def main():
     # Telechargement
-    pip.main(['install', 'folium'])
+    
     telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2016/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "./2016.csv")
     telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2015/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "./2015.csv")
     telg.Telechargement("https://data.ratp.fr/explore/dataset/trafic-annuel-entrant-par-station-du-reseau-ferre-2014/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true", "./2014.csv")
@@ -72,7 +74,7 @@ def main():
     b = list(range(0, 60000000, 5000000))
 
     
-    ##On effectue le fiagramme uniquement pour l'année 2016 car les chiffres ne changent pas entre 2013 et 2016
+    ##On effectue le diagramme uniquement pour l'année 2016 car les chiffres ne changent pas entre 2013 et 2016
     histo.Histogramme(trafic_2016, b, "Trafic", "Nb Stations", "Trafic gares RATP en 2016")
     bar.Bar(trafic_rer_2016, trafic_rer_2015, trafic_rer_2014, trafic_rer_2013, stations_rer, 'Stations', 'Trafic', 'Trafic Stations RER RATP')
     bar.Bar(trafic_metro_2016, trafic_metro_2015, trafic_metro_2014, trafic_metro_2013, stations_metro, 'Stations', 'Trafic', 'Trafic Stations Metro RATP')
