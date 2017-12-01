@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 29 09:53:36 2017
 
-@author: hoferc
+@author: Cassandra Hofer & Romain Lancia
 """
 import matplotlib.pyplot as plt
 

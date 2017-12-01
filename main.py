@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 15 09:06:13 2017
 
-@author: hoferc
+@author: Cassandra Hofer & Romain Lancia
 """
 
 import pip

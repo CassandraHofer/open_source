@@ -2,7 +2,7 @@
 """
 Created on Tue Nov 21 21:58:03 2017
 
-@author: romain
+@author: Cassandra Hofer & Romain Lancia
 """
 
 import csv

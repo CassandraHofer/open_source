@@ -1,7 +1,7 @@
 """
 Created on Wed Nov  8 10:45:30 2017
 
-@author: hoferc
+@author: Cassandra Hofer & Romain Lancia
 """
 
 import numpy as np # import package

@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 15 11:05:30 2017
 
-@author: hoferc
+@author: Cassandra Hofer & Romain Lancia
 """
 import urllib
 

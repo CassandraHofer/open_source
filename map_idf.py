@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 29 10:11:15 2017
 
-@author: lanciar
+@author: Cassandra Hofer & Romain Lancia
 """
 
 import folium
