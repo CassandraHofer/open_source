@@ -69,8 +69,15 @@ class Extract:
         with open(self.csvfile) as f:
             reader = csv.DictReader(f, delimiter=';')
             for ligne in reader:
+                #remplacement des caractere spéciaux
+                key = ligne['nomptar']
+                key = key.replace('Ã©', 'é')
+                key = key.replace('Ã¨', 'è')
+                key = key.replace('Ã¢', 'â')
+                key = key.replace('Ã´', 'ô')
+                key = key.replace('Ã§', 'ç')
                 lat, long = ligne['coord'].split(', ')
-                d[ligne['nomptar']] = Station(ligne['Accessibilite Quai Train'], (float)(lat), (float)(long))                
+                d[key] = Station(ligne['Accessibilite Quai Train'], (float)(lat), (float)(long))
         return d
     
     def get_accessibilite(self):

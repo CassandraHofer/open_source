@@ -34,5 +34,5 @@ class Pie_Chart:
          
         plt.axis('equal')
         plt.tight_layout()
-        #plt.show()
-        plt.savefig("./img/"+self.title + ".png", dpi = 150)
+        plt.savefig("./img/pie.png", dpi = 150)
+        plt.show()

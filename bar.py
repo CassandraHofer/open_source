@@ -55,7 +55,7 @@ class Bar:
         plt.legend()
          
         plt.tight_layout()
-        #plt.show()
         fig.savefig("./img/"+self.title+'.png', dpi = 150)
+        plt.show()
         
         
