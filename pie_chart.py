@@ -11,10 +11,10 @@ class Pie_Chart:
         self.title = title
         self.labels = labels
         self.lst = lst
-        self.afficherPieChart()
+        self.generePieChart()
 
 
-    def afficherPieChart(self):
+    def generePieChart(self):
         count_access = 0;
         count_non_access = 0;
         for e in self.lst:
@@ -34,4 +34,5 @@ class Pie_Chart:
          
         plt.axis('equal')
         plt.tight_layout()
+        print("Génération du pie chart à l'adresse ./charts/pie.png")
         plt.savefig("./charts/pie.png", dpi = 150)

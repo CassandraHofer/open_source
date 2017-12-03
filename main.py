@@ -12,7 +12,6 @@ import telechargement as telg
 import extract as ext
 import bar
 import pie_chart as pc
-
 import map_idf
 import webbrowser
 import os
@@ -82,7 +81,17 @@ def main():
     bar.Bar(trafic_top5_2016, trafic_top5_2015, trafic_top5_2014, trafic_top5_2013, stations_top5, 'Stations', 'Trafic (en millions)', 'Trafic des 5 stations les plus fréquentées de la RATP')
     pc.Pie_Chart("Accessibilité pour les personnes à mobilité réduite des gares RATP", ["Accessibles", "      Non\nAccessibles"], lst_accessibilite)
     map_idf.Map_Idf(stations_map, dict_accessibilite)
-    webbrowser.open(os.getcwd()+"./index.html") 
+
+    #Ouverture dans un navigateur de la page index.html choisi parmis ceux contenu dans webbrowser._tryorder qui detecte les navigateurs présents sur l'ordinateur
+    if 'chrome' in webbrowser._tryorder:
+        webbrowser.get('chrome').open_new_tab(os.getcwd()+"./index.html")
+    elif 'firefox' in webbrowser._tryorder:
+        webbrowser.get('firefox').open_new_tab(os.getcwd()+"./index.html")
+    elif 'safari' in webbrowser._tryorder:
+        webbrowser.get('safari').open_new_tab(os.getcwd()+"./index.html")
+    else:
+        webbrowser.get(webbrowser._tryorder[1]).open_new_tab(os.getcwd()+"./index.html")
+    
 
 
 if __name__ == "__main__":

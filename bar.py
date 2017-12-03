@@ -17,9 +17,9 @@ class Bar:
         self.xlabel = xlabel
         self.ylabel = ylabel
         self.title = title    
-        self.afficherBar()
+        self.genereBar()
         
-    def afficherBar(self):
+    def genereBar(self):
         
         nb_stations = len(self.labels)
         # create plot
@@ -55,6 +55,7 @@ class Bar:
         plt.legend()
          
         plt.tight_layout()
+        print("Génération du bar chart {} à l'adresse ./charts/{}.png".format(self.title, self.title))
         fig.savefig("./charts/"+self.title+'.png', dpi = 150)
         
         

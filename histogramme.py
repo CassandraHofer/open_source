@@ -15,27 +15,21 @@ class Histogramme:
         self.xlabel = xlabel
         self.ylabel = ylabel
         self.title = title
-        self.afficherHistogramme()
-        self.moyenne_histo(trafic)
-        self.mediane_histo(trafic)
-        self.variance_histo(trafic)
-        self.ecartType_histo(trafic)
+        self.genereHistogramme()
         
+    def genereHistogramme(self):
         
-    def afficherHistogramme(self):
-        
-        n, bins, patches = plt.hist(self.trafic, bins=self.b,alpha = 0.9 ,color= ['crimson'] , rwidth=0.9)
+        n, bins, patches = plt.hist(self.trafic, bins=self.b,alpha = 0.9 ,color= ['crimson'], rwidth=0.9)
         plt.xlabel(self.xlabel)
         plt.ylabel(self.ylabel)
         plt.title(self.title)
+        plt.text(25000000, 225, "Moyenne = {}\nMédiane = {}\nVariance = {}\nEcart type = {}".format(self.moyenne_histo(), self.mediane_histo(), self.variance_histo(), self.ecartType_histo()))
+        print("Génération de l'histogramme à l'adresse ./charts/histo.png")
         plt.savefig("./charts/histo.png", dpi=150)
         
-    def moyenne_histo(self, liste):
+    def moyenne_histo(self):
         """
         Retourne la moyenne du trafic des gares de la RATP en 2016
-    
-        Args:
-            liste: liste du trafic de chaque station de la RATP en 216
     
         Returns:
             la moyenne en float
@@ -44,15 +38,12 @@ class Histogramme:
         >>> print(moyenne)
         4833226.92683
         """
-        moyenne = np.mean(liste)
+        moyenne = np.mean(self.trafic)
         return moyenne
     
-    def mediane_histo(self, liste):
+    def mediane_histo(self):
         """
         Retourne la mediane du trafic des gares de la RATP en 2016
-    
-        Args:
-            liste: liste du trafic de chaque station de la RATP en 216
     
         Returns:
             la mediane en float
@@ -61,15 +52,12 @@ class Histogramme:
         >>> print(mediane)
         3410557.0
         """
-        mediane = np.median(liste)
+        mediane = np.median(self.trafic)
         return mediane
     
-    def variance_histo(self, liste):
+    def variance_histo(self):
         """
         Retourne la variance du trafic des gares de la RATP en 2016
-    
-        Args:
-            liste: liste du trafic de chaque station de la RATP en 216
     
         Returns:
             la variance en float
@@ -78,15 +66,12 @@ class Histogramme:
         >>> print(variance)
         3.5307850425e+13
         """
-        variance = np.var(liste)
+        variance = np.var(self.trafic)
         return variance
         
-    def ecartType_histo(self, liste):
+    def ecartType_histo(self):
         """
         Retourne l'ecart type du trafic des gares de la RATP en 2016
-    
-        Args:
-            liste: liste du trafic de chaque station de la RATP en 216
     
         Returns:
             l'ecart type en float
@@ -95,5 +80,5 @@ class Histogramme:
         >>> print(ecartType)
         5942040.93094
         """
-        ecartType = np.std(liste)
+        ecartType = np.std(self.trafic)
         return ecartType
