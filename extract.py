@@ -104,7 +104,8 @@ class Extract:
     def get_accessibilite(self):
         """
         génere la liste des accessibilités des différentes stations de transport en commun du fichier csv de l'objet courant
-        
+        
+
         Returns:
             Liste des accessibilités relatives aux stations de transports en commun
 
@@ -115,6 +116,4 @@ class Extract:
         stations = self.build_dict_accessibilite()
         for station in stations.keys():
             lst_accessibilite.append((int)(stations[station].Accessibilite))
-
-        print(lst_accessibilite)
         return lst_accessibilite
