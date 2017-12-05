@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
@@ -251,8 +253,23 @@
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
           <i class="fa fa-3x fa-times"></i>
         </a>
-            <h5 style="margin-top:-50px;z-index= 100; text-align: center; background-color: white; opacity: 0.8; width: 60%; height: 3%; margin-right: auto; margin-left: auto; margin-bottom: 0">Accessibilité des gares RATP</h5>
-			<object type="text/html" data="map.html" style="position: absolute;height: 100%;width: 100%;top: 0;left:0;z-index: -1;"></object>
+            <h5 style="margin-top:-50px;z-index:100; text-align: center; background-color: white; width: 60%; height: 3%; margin-right: auto; margin-left: auto; margin-bottom: 0">Accessibilité des gares RATP</h5>
+			      <object type="text/html" data="map.html" style="position: absolute;height: 100%;width: 100%;top: 0;left:0;z-index: -1;"></object>
+            <div style="background-color: white; z-index:100; position: absolute; bottom:0; right:0; width: 20%;">
+              <div class ="cross">
+                <div style= "background: url('https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/images/markers-soft.png') no-repeat 0 0; width: 35px; height: 46px;">
+                  <i class="glyphicon glyphicon-remove  icon-white"></i>
+                </div>
+              </div>
+              <div class ="cross" style ="width:50%;">Gare Non Accessible</div>
+              <br/>
+              <div class ="cross">
+                <div style= "background: url('https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/images/markers-soft.png') no-repeat 0 0; width: 35px; height: 46px; background-position: -72px 0;">
+                  <i class="glyphicon glyphicon-ok  icon-white"></i>
+                </div>
+              </div>
+              <div class ="cross" style ="width:50%;">Gare Accessible</div>
+            </div>
       </div>
     </div>
 

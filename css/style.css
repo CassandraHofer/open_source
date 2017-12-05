@@ -322,3 +322,16 @@ a:active, a:focus, a:hover {
 #map .w-100{
 	width: 350px!important
 }
+
+.icon-white {
+    color: #fff;
+}
+
+i {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.cross{
+  display: inline-block;
+}
