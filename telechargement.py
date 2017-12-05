@@ -13,6 +13,10 @@ class Telechargement():
         self.chargement()
         
     def chargement(self):
+        """
+        Téléchargement du fichier disponible à l'adresse source du fichier courant
+        et le sauvegarde à l'adresse destination du fichier courant
+        """
         # lancement du téléchargement
 #        proxy_address = 'http://147.215.1.189:3128/'
 #        proxy_handler = urllib.request.ProxyHandler({'http': proxy_address, 'https': proxy_address})

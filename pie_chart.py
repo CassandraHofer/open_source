@@ -15,6 +15,10 @@ class Pie_Chart:
 
 
     def generePieChart(self):
+        """
+        Génere un pie chart en fonction des valeur de lst en paramétre de l'objet
+        courant puis le sauvegarde sous format png à l'adresse ./charts/pie.png
+        """
         count_access = 0;
         count_non_access = 0;
         for e in self.lst:

@@ -18,6 +18,10 @@ class Histogramme:
         self.genereHistogramme()
         
     def genereHistogramme(self):
+        """
+            Génere un histogramme en fonction des paramétres de l'objet courant puis
+            le sauvegarde sous format png à l'adresse ./charts/histo.png
+        """
         
         n, bins, patches = plt.hist(self.trafic, bins=self.b,alpha = 0.9 ,color= ['crimson'], rwidth=0.9)
         plt.xlabel(self.xlabel)
