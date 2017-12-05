@@ -46,7 +46,7 @@ def main():
     trafic_metro_2016 = []
     trafic_metro_2015 = []
     trafic_metro_2014 = []
-    trafic_metro_2013 = []
+    trafic_metro_2013 = []  
     trafic_top5_2016 = []
     trafic_top5_2015 = []
     trafic_top5_2014 = []
@@ -82,17 +82,12 @@ def main():
     pc.Pie_Chart("Accessibilité pour les personnes à mobilité réduite des gares RATP", ["Accessibles", "      Non\nAccessibles"], lst_accessibilite)
     map_idf.Map_Idf(stations_map, dict_accessibilite)
 
-    #Ouverture dans un navigateur de la page index.html choisi parmis ceux contenu dans webbrowser._tryorder qui detecte les navigateurs présents sur l'ordinateur
-    if 'chrome' in webbrowser._tryorder:
-        webbrowser.get('chrome').open_new_tab(os.getcwd()+"./index.html")
-    elif 'firefox' in webbrowser._tryorder:
-        webbrowser.get('firefox').open_new_tab(os.getcwd()+"./index.html")
-    elif 'safari' in webbrowser._tryorder:
-        webbrowser.get('safari').open_new_tab(os.getcwd()+"./index.html")
-    else:
-        webbrowser.get(webbrowser._tryorder[1]).open_new_tab(os.getcwd()+"./index.html")
+    #si chrome n'est pas contenu dans webbrowser._tryorder on ajoute d'abord chrome au webbrowser._tryorder chemin absolue vers l'éxécutable de chrome
+    if 'chrome' not in webbrowser._tryorder:
+        webbrowser.register('chrome', None, webbrowser.GenericBrowser('C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'))
+    #Ouverture dans chrome de la page index.html
+    webbrowser.get('chrome').open(os.getcwd()+"./index.html")
     
-
 
 if __name__ == "__main__":
     main()

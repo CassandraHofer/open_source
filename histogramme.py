@@ -23,7 +23,7 @@ class Histogramme:
         plt.xlabel(self.xlabel)
         plt.ylabel(self.ylabel)
         plt.title(self.title)
-        plt.text(25000000, 225, "Moyenne = {}\nMédiane = {}\nVariance = {}\nEcart type = {}".format(self.moyenne_histo(), self.mediane_histo(), self.variance_histo(), self.ecartType_histo()))
+        plt.text(25000000, 220, "Moyenne = {}\nMédiane = {}\nVariance = {}\nEcart type = {}".format(self.moyenne_histo(), self.mediane_histo(), self.variance_histo(), self.ecartType_histo()))
         print("Génération de l'histogramme à l'adresse ./charts/histo.png")
         plt.savefig("./charts/histo.png", dpi=150)
         
